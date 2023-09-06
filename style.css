@@ -107,6 +107,7 @@ nav{
   background-repeat: repeat no-repeat !important;
   background-position: 0 bottom;
   transform-origin: center bottom;
+  /* rotate: 18deg; */
 }
 .waveTop {
   background-size: 50% 100px;
@@ -472,17 +473,85 @@ img {
 
 
 /************** footer ************/
-.container {
+/* .container {
   position: relative;
   height: 70vh;
+} */
+.footerwaveWrapper {
+  z-index: 9;
+  position: relative;
+  height: 100%;
+  rotate: 180deg;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  overflow: hidden;
 }
-
-.footer_wave {
+.footerwaveWrapperInner {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 10vh);
+  top: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to top, #0099ff 20%, #005188 80%);
+}
+.footertop {
+  opacity: 0.5;
+  z-index: 15;
+}
+.footermid {
+  opacity: 0.75;
+  z-index: 10;
+}
+.footerbottom {
+  z-index: 5;
+}
+.footerwave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat !important;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+  /* rotate: 18deg; */
+}
+.footerwaveTop {
+  background-size: 50% 100px;
+}
+.footerwaveTop {
+  background-size: 50% 100px;
+  animation: wave 3s;
+  animation-delay: 1s;
+}
+@keyframes wave {
+  0% {
+      transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.50);
+  }
+  100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+.footerwaveMid {
+  background-size: 50% 120px;
+  animation: wave 10s linear infinite;
+}
+.footerwaveBottom {
+  background-size: 50% 100px;
+  animation: wave 15s linear infinite;
+}
+/* .footer_wave {
   position: absolute;
   bottom: 0;
   height: 70vh;
   width: 100%;
-  background: url('wave.png') repeat-x;
+  background: url('/wave.png') repeat-x;
   background-size: 450rem 50rem;
   animation: animate 15s linear infinite;
 }
@@ -500,14 +569,14 @@ img {
 
 .footer_wave:nth-child(2) {
   opacity: 0.5;
-  animation-delay: 0.2s;
+  animation-delay: 10s;
   animation-direction: reverse;
 }
 
 .footer_wave:nth-child(3) {
   opacity: 0.7;
-  animation-delay: 5s;
-}
+  animation-delay: 15s;
+} */
 
 /*------------------- Responsiveness ---------------------*/
 @media screen and (max-width:1024px){
