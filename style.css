@@ -482,7 +482,7 @@ img {
   bottom: 0;
   height: 70vh;
   width: 100%;
-  background: url('/wave.png') repeat-x;
+  background: url('wave.png') repeat-x;
   background-size: 450rem 50rem;
   animation: animate 15s linear infinite;
 }
