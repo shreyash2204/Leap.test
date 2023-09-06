@@ -66,10 +66,74 @@ nav{
 }
 /*------------ HEADER --------------*/
 .header{
-    width: 100%;
-    height: 90vh;
-    display: flex;
-    background-image:linear-gradient(to bottom left, #454dd1 40%, #00006e 100%);
+  z-index: 100;
+  height: 90vh;
+
+}
+.waveWrapper {
+  z-index: 9;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  overflow: hidden;
+}
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 10vh);
+  top: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to top, #0099ff 20%, #005188 80%);
+}
+.top {
+  opacity: 0.5;
+  z-index: 15;
+}
+.mid {
+  opacity: 0.75;
+  z-index: 10;
+}
+.bottom {
+  z-index: 5;
+}
+.wave {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background-repeat: repeat no-repeat !important;
+  background-position: 0 bottom;
+  transform-origin: center bottom;
+}
+.waveTop {
+  background-size: 50% 100px;
+}
+.waveTop {
+  background-size: 50% 100px;
+  animation: wave 3s;
+  animation-delay: 1s;
+}
+@keyframes wave {
+  0% {
+      transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.50);
+  }
+  100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1);
+  }
+}
+.waveMid {
+  background-size: 50% 120px;
+  animation: wave 10s linear infinite;
+}
+.waveBottom {
+  background-size: 50% 100px;
+  animation: wave 15s linear infinite;
 }
 /*--------------- About-US -----------*/
 .about-us_heading{
@@ -79,7 +143,7 @@ nav{
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin: 20px auto;
+  margin: 0 auto;
 }
 .about-us_heading h1{
   font-size: 50px;
@@ -163,7 +227,9 @@ nav{
   align-items: flex-start;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-
+  /* align-items: center; */
+  text-align: center;
+  /* justify-content: center; */
   padding: 50px 0;
 }
 .ag-courses_item {
@@ -171,16 +237,16 @@ nav{
   flex-basis: calc(33.33333% - 30px);
 
   margin: 0 15px 30px;
-
+  justify-content: center;
   overflow: hidden;
-
+  text-decoration: none !important;
   border-radius: 28px;
 }
 .ag-courses-item_link {
   display: block;
   padding: 30px 20px;
   background-color: #121212;
-
+  justify-content: center;
   overflow: hidden;
 
   position: relative;
@@ -197,8 +263,8 @@ nav{
 }
 .ag-courses-item_title {
   min-height: 87px;
-  margin: 0 0 25px;
-
+  margin: 50px 0 25px; 
+  justify-content: center;
   overflow: hidden;
 
   font-weight: bold;
@@ -378,6 +444,7 @@ img {
 .card_content {
   padding: 1rem;
   background: linear-gradient(to bottom left, #454dd1 40%, #00006e 100%);
+  height: 100%;
 }
 
 .card_title {
@@ -403,6 +470,45 @@ img {
   text-align: center;
 }
 
+
+/************** footer ************/
+.container {
+  position: relative;
+  height: 70vh;
+}
+
+.footer_wave {
+  position: absolute;
+  bottom: 0;
+  height: 70vh;
+  width: 100%;
+  background: url('/wave.png') repeat-x;
+  background-size: 450rem 50rem;
+  animation: animate 15s linear infinite;
+}
+
+@keyframes  animate {
+  0% {
+    background-position-x: 0;
+    background-position-x: -250rem;
+  }
+}
+
+.footer_wave:nth-child(1) {
+  opacity: 0.9;
+}
+
+.footer_wave:nth-child(2) {
+  opacity: 0.5;
+  animation-delay: 0.2s;
+  animation-direction: reverse;
+}
+
+.footer_wave:nth-child(3) {
+  opacity: 0.7;
+  animation-delay: 5s;
+}
+
 /*------------------- Responsiveness ---------------------*/
 @media screen and (max-width:1024px){
   .nav-links{
@@ -411,6 +517,9 @@ img {
   .header{
     width: 100%;
     height: 60vh;
+  }
+  .about-us{
+    margin: 200px;
   }
 }
 
@@ -445,6 +554,9 @@ img {
       height: 60vh;
     }
     /*----------------- About-Us -------------- */
+    .about-us{
+      margin: 200px;
+    }
     .about-us_heading{
       padding: 0px 20px;
     }
