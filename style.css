@@ -67,12 +67,13 @@ nav{
 /*------------ HEADER --------------*/
 .header{
   z-index: 100;
-  height: 80vh;
+  height: 90vh;
 
 }
 .waveWrapper {
   z-index: 9;
   position: absolute;
+  /* height: 75vh; */
   left: 0;
   right: 0;
   bottom: 0;
@@ -83,7 +84,7 @@ nav{
 .waveWrapperInner {
   position: absolute;
   width: 100%;
-  height: calc(100% - 10vh);
+  height: 70%;
   top: 0;
   overflow: hidden;
   background-image: linear-gradient(to top, #0099ff 20%, #005188 80%);
@@ -478,7 +479,8 @@ img {
   height: 70vh;
 } */
 footer{
-    height:80vh;
+  height: 50vh;
+  width: 100%;
 }
 .footerwaveWrapper {
   z-index: 9;
@@ -645,6 +647,7 @@ footer{
     .about{
       padding: 20px;
       flex-direction: column;
+      text-align: justify;
     }
     .about-image{
       margin-right: 0px;
@@ -661,7 +664,43 @@ footer{
       top: 180%;
     }
 }
-
+/* @media screen and (max-width:420px){
+  .about-us{
+    margin: 200px;
+  }
+  .about-us_heading{
+    padding: 0px 10px;
+  }
+  .about-us_heading h1{
+    font-size: 36px;
+  }
+  .about-us_heading p{
+    font-size: 17px;
+    margin-bottom: 0px;
+  }
+  .about-container{
+    padding: 0px;
+  }
+  .about{
+    padding: 20px;
+    flex-direction: column;
+    text-align: justify;
+  }
+  .about-image{
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  .about-content p{
+    padding: 0px;
+    font-size: 16px;
+  }
+  .about-content .read-more{
+    font-size: 16px;
+  }
+  .gallery{
+    top: 180%;
+  }
+} */
 @keyframes navLinkFade{
   from{
     opacity:0;
